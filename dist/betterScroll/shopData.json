@@ -1,0 +1,58 @@
+{
+  "left": ["left1", "left2", "left3", "left4", "left5", "left6", "left7", "left8", "left9","left1", "left2", "left3", "left4", "left5", "left6", "left7", "left8", "left9"],
+  "right": [{
+    "leftTitle": "leftTitle1",
+    "img": "/betterScroll/images/img (1).jpg"
+  }, {
+    "leftTitle": "leftTitle2",
+    "img": "/betterScroll/images/img (2).jpg"
+  }, {
+    "leftTitle": "leftTitle3",
+    "img": "/betterScroll/images/img (3).jpg"
+  }, {
+    "leftTitle": "leftTitle4",
+    "img": "/betterScroll/images/img (4).jpg"
+  }, {
+    "leftTitle": "leftTitle5",
+    "img": "/betterScroll/images/img (5).jpg"
+  }, {
+    "leftTitle": "leftTitle6",
+    "img": "/betterScroll/images/img (6).jpg"
+  }, {
+    "leftTitle": "leftTitle7",
+    "img": "/betterScroll/images/img (7).jpg"
+  }, {
+    "leftTitle": "leftTitle8",
+    "img": "/betterScroll/images/img (8).jpg"
+  }, {
+    "leftTitle": "leftTitle9",
+    "img": "/betterScroll/images/img (9).jpg"
+  },{
+    "leftTitle": "leftTitle1",
+    "img": "/betterScroll/images/img (1).jpg"
+  }, {
+    "leftTitle": "leftTitle2",
+    "img": "/betterScroll/images/img (2).jpg"
+  }, {
+    "leftTitle": "leftTitle3",
+    "img": "/betterScroll/images/img (3).jpg"
+  }, {
+    "leftTitle": "leftTitle4",
+    "img": "/betterScroll/images/img (4).jpg"
+  }, {
+    "leftTitle": "leftTitle5",
+    "img": "/betterScroll/images/img (5).jpg"
+  }, {
+    "leftTitle": "leftTitle6",
+    "img": "/betterScroll/images/img (6).jpg"
+  }, {
+    "leftTitle": "leftTitle7",
+    "img": "/betterScroll/images/img (7).jpg"
+  }, {
+    "leftTitle": "leftTitle8",
+    "img": "/betterScroll/images/img (8).jpg"
+  }, {
+    "leftTitle": "leftTitle9",
+    "img": "/betterScroll/images/img (9).jpg"
+  }]
+}

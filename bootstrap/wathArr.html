@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div id="list"></div>
+
+    <script>
+        var arrayProto = Array.prototype;
+        var arrayMethods = Object.create(arrayProto);
+        var newArrProto = [];
+
+        ['push', 'pop', 'shift', 'unshift', 'splice', 'sort', 'reverse'].forEach(method => {
+            //原生Array的原型方法
+            let original = arrayMethods[method];
+            //将push,pop等方法重新封装并定义在对象newArrProto的属性上
+            //这里需要注意的是封装好的方法是定义在 newArrProto 的属性上而不是其原型属性
+            // newArrProto.__proto__没有改变
+
+            newArrProto[method] = function mutator() {
+                console.log('数组变化了');
+                //调用对应的原生方法并返回结果
+                original.apply(this, arguments);
+                showList(this);
+
+                return;
+            }
+
+        })
+        let list = [1, 2];
+        //将我们要监听的数组的原型指针指向上面定义的空数组对象
+        //newArrproto的属性上定义了我们封装好的push,pop等方法
+        list.__proto__ = newArrProto;
+
+        // list.push(11);
+        function showList(data) {
+            var htmlStr = data.map(function (item) {
+                return '<p>' + item + '</p>';
+            })
+            $('#list').html(htmlStr.join(''));
+        }
+    </script>
+</body>
+
+</html>
