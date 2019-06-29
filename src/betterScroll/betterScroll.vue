@@ -109,6 +109,21 @@
                         }, 10)
                     })
 
+                },(res) => {
+                    this.shopData = dataDemo.data;
+                    // console.log(this.shopData);
+                    let scrollH = 0
+                    this.$nextTick(() => {
+                        setTimeout(() => {
+                            // 获取wrapper2中所有滚动的li元素
+                            const lis = this.$refs.contents
+                            for (var i = 0; i < lis.length; i++) {
+                                this.scrollTops.push(scrollH)
+                                scrollH += lis[i].scrollHeight
+                            }
+                        }, 10)
+                    })
+
                 })
             },
             /**
@@ -130,6 +145,65 @@
             }
         }
     }
+    let dataDemo={data:{
+  "left": ["left1", "left2", "left3", "left4", "left5", "left6", "left7", "left8", "left9","left1", "left2", "left3", "left4", "left5", "left6", "left7", "left8", "left9"],
+  "right": [{
+    "leftTitle": "leftTitle1",
+    "img": "./betterScroll/images/img (1).jpg"
+  }, {
+    "leftTitle": "leftTitle2",
+    "img": "./betterScroll/images/img (2).jpg"
+  }, {
+    "leftTitle": "leftTitle3",
+    "img": "./betterScroll/images/img (3).jpg"
+  }, {
+    "leftTitle": "leftTitle4",
+    "img": "./betterScroll/images/img (4).jpg"
+  }, {
+    "leftTitle": "leftTitle5",
+    "img": "./betterScroll/images/img (5).jpg"
+  }, {
+    "leftTitle": "leftTitle6",
+    "img": "./betterScroll/images/img (6).jpg"
+  }, {
+    "leftTitle": "leftTitle7",
+    "img": "./betterScroll/images/img (7).jpg"
+  }, {
+    "leftTitle": "leftTitle8",
+    "img": "./betterScroll/images/img (8).jpg"
+  }, {
+    "leftTitle": "leftTitle9",
+    "img": "./betterScroll/images/img (9).jpg"
+  },{
+    "leftTitle": "leftTitle1",
+    "img": "./betterScroll/images/img (1).jpg"
+  }, {
+    "leftTitle": "leftTitle2",
+    "img": "./betterScroll/images/img (2).jpg"
+  }, {
+    "leftTitle": "leftTitle3",
+    "img": "./betterScroll/images/img (3).jpg"
+  }, {
+    "leftTitle": "leftTitle4",
+    "img": "./betterScroll/images/img (4).jpg"
+  }, {
+    "leftTitle": "leftTitle5",
+    "img": "./betterScroll/images/img (5).jpg"
+  }, {
+    "leftTitle": "leftTitle6",
+    "img": "./betterScroll/images/img (6).jpg"
+  }, {
+    "leftTitle": "leftTitle7",
+    "img": "./betterScroll/images/img (7).jpg"
+  }, {
+    "leftTitle": "leftTitle8",
+    "img": "./betterScroll/images/img (8).jpg"
+  }, {
+    "leftTitle": "leftTitle9",
+    "img": "./betterScroll/images/img (9).jpg"
+  }]
+}
+};
 </script>
 <style scoped>
     /* #f2f2f2: #f2f2f2; */

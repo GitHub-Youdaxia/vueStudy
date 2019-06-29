@@ -71,6 +71,10 @@
                     console.log('请求菜单数据了res', res);
                     this.menuData = res.data;
                     this.currentView = 'menu-search';
+                },(res) => {
+                    // console.log('请求菜单数据了res', res);
+                    this.menuData = menuDemo.data;
+                    this.currentView = 'menu-search';
                 })
             },
         },
@@ -89,6 +93,32 @@
         }
 
     }
+    let menuDemo={data:[{
+    "tx_code": "000001",
+    "tx_name": "交易1",
+    "tx_path": "T000001",
+    "parent_tx_code": "2103",
+    "big_pic_path": " "
+},
+{
+    "tx_code": "000002",
+    "tx_name": "交易2",
+    "tx_path": "T000002",
+    "parent_tx_code": "2103",
+    "big_pic_path": " "
+},{
+    "tx_code": "000003",
+    "tx_name": "交易3",
+    "tx_path": "T000003",
+    "parent_tx_code": "2103",
+    "big_pic_path": " "
+},{
+    "tx_code": "000004",
+    "tx_name": "交易4",
+    "tx_path": "T000004",
+    "parent_tx_code": "2103",
+    "big_pic_path": " "
+}]};
 </script>
 <style scoped>
     .tygm {
