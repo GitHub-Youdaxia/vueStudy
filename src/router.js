@@ -36,26 +36,26 @@ const router={
       name: '过度&动画',
       component: Transitions,
     },
-    {
-      path: '/Combination',
-      name: '可复用性 & 组合',
-      component: Combination,
-    },
-    {
-      path: '/lifecircle',
-      name: '生命周期',
-      component: LifeCircle,
-    },
-    {
-      path: '/about',
-      name: '其它',
-      component: About,
-    },
-    {
-      path: '/elementUI',
-      name: 'elementUI',
-      component: elementUI,
-    },
+    // {
+    //   path: '/Combination',
+    //   name: '可复用性 & 组合',
+    //   component: Combination,
+    // },
+    // {
+    //   path: '/lifecircle',
+    //   name: '生命周期',
+    //   component: LifeCircle,
+    // },
+    // {
+    //   path: '/about',
+    //   name: '其它',
+    //   component: About,
+    // },
+    // {
+    //   path: '/elementUI',
+    //   name: 'elementUI',
+    //   component: elementUI,
+    // },
     {
       path: '/betterScroll',
       name: 'betterScroll',
@@ -66,11 +66,11 @@ const router={
       name: 'tygm',
       component: tygm,
     },
-    {
-      path: '/Directives',
-      name: '测试demo',
-      component: Directives,
-    }
+    // {
+    //   path: '/Directives',
+    //   name: '测试demo',
+    //   component: Directives,
+    // }
   ]
 };
 window.routerArr=router.routes;
