@@ -225,7 +225,6 @@
     }
 
     .wrapper {
-        height: 100%;
         overflow: hidden;
         width: 80px;
         font-size: 14px;
@@ -255,7 +254,6 @@
 
 
     .wrapper2 {
-        height: 100%;
         width: 100%;
         background: #f2f2f2;
         padding: 10px 10px 10px 0;

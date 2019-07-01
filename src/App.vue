@@ -1,13 +1,14 @@
 <template>
   <div class="app" @keydown.ctrl.90="$router.go(-1)">
     <!-- vuex 共享状态设置 路由是否显示 -->
-    <div class="nav" v-show="isShow">
+    <div class="nav fixed-nav" v-show="isShow">
       <router-link class="nav-a" v-for="(item,index,arr) in routerArr" :to="item.path" :key="index">{{item.name}}</router-link>
     </div>
     <my-custom-web-component></my-custom-web-component>
     <router-view/>
     <!-- <myfooter></myfooter> -->
-    <button class="routerGo-1"  @click="$router.go(-1)" type="button">返回</button>
+    <!-- <button class="routerGo-1"  @click="$router.go(-1)" type="button">返回</button> -->
+    <button class="routerListShow" @click="$store.state.showNav=!$store.state.showNav" type="button">路由</button>
   </div>
 </template>
 
@@ -65,6 +66,7 @@
     flex-grow: 1;
     overflow: auto;
     height: 100%;
+
   }
 
   .nav {
@@ -76,7 +78,7 @@
   }
 
   .nav {
-    padding: 30px;
+    padding: 10px;
   }
 
   .nav a {
@@ -92,7 +94,21 @@
     margin-left: 10px;
     margin-right: 10px;
   }
-
+  .fixed-nav{
+    position: fixed;
+    right: 13px;
+    top:110px;
+    z-index: 999;
+    background-color: rgb(158, 228, 151);
+  }
+  .fixed-nav a{
+   display: block;
+   margin: 10px;
+   text-align: left;
+  }
+  .fixed-nav a:hover{
+   color: red;
+  }
   p {
     margin: 0;
     padding: 0;
@@ -176,9 +192,9 @@
     margin-bottom: 10px;
   }
 
-  .routerGo-1 {
+  .routerGo-1,.routerListShow {
     position: fixed;
-    right: 10px;
+    right: 30px;
     top: 20px;
     width: 40px;
     height: 40px;
@@ -188,7 +204,9 @@
     border: none;
   }
 
-
+  .routerListShow{
+    top:60px;
+  }
 
   ul,
   ol {
