@@ -4,19 +4,22 @@ import LifeCircle from './common/LifeCircle.vue'
 import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Form from './views/Form.vue'
+import RouterStudy from './views/RouterStudy.vue'
+import Route1 from './components/Routers/Route1.vue'
+import Route2 from './components/Routers/Route2.vue'
 import Transitions from './views/Transitions.vue'
 import componentStudy from './views/componentStudy.vue'
 import Directives from './views/Directives.vue'
+import NotFound from './views/NotFound.vue'
 import Combination from './views/Combination.vue'
-import elementUI from './elementUI/Index.vue'
 import betterScroll from './betterScroll/betterScroll.vue'
+import PageList from './Cart/PageList.vue'
 import tygm from './tygm/tygm.vue'
 
 console.log('router.js');
 Vue.use(Router)
-const router={
-  routes: [
-    {
+const router = {
+  routes: [{
       path: '/',
       name: '主页',
       component: Home,
@@ -32,9 +35,43 @@ const router={
       component: componentStudy,
     },
     {
+      path: '/PageList',
+      name: '购物车',
+      component: PageList,
+    },
+    {
       path: '/Transitions',
       name: '过度&动画',
       component: Transitions,
+    },
+    {
+      path: '/RouterStudy',
+      name: '路由学习',
+      component: RouterStudy,
+      children: [{
+        path: 'Route1',
+        name: '路由学Rroute1',
+        component: Route1,
+      }, {
+        path: 'Route2',
+        name: '路由学Rroute2',
+        component: Route2,
+      }]
+    },
+
+    {
+      path: '/betterScroll',
+      name: 'betterScroll',
+      component: betterScroll,
+    },
+    {
+      path: '/tygm',
+      name: 'tygm',
+      component: tygm,
+    },
+    {
+      path: '/*',
+      component: NotFound
     },
     // {
     //   path: '/Combination',
@@ -56,16 +93,6 @@ const router={
     //   name: 'elementUI',
     //   component: elementUI,
     // },
-    {
-      path: '/betterScroll',
-      name: 'betterScroll',
-      component: betterScroll,
-    },
-    {
-      path: '/tygm',
-      name: 'tygm',
-      component: tygm,
-    },
     // {
     //   path: '/Directives',
     //   name: '测试demo',
@@ -73,5 +100,5 @@ const router={
     // }
   ]
 };
-window.routerArr=router.routes;
+window.routerArr = router.routes;
 export default new Router(router)

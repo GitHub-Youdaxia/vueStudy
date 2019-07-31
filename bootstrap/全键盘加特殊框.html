@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layer/layer.js"></script>
+    <script src="全键盘加特殊框/allInput.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" name="" id="toppaynum_tygm" data-toggle="toppaynum_tygm" data-options="{maxLength:10,}">
+
+        <input type="text" name="" id="freezenum_tygm" data-toggle="freezenum_tygm" data-options="{maxLength:12,}">
+    </div>
+
+    <script>
+        $(function () {
+            try {
+                //公共初始化特殊框
+                var allInput = $('body').find('[data-toggle]');
+                allInput.each(function (index, item) {
+                    var dataToggle = $(item).data('toggle');
+                    var dataOptions = $(item).data('options');
+                    if (tygmAllInput[dataToggle] != undefined) {
+                        tygmAllInput[dataToggle].Ctrl($(item), dataOptions);
+                    } else {
+                        console.log('没有此特殊框:', dataToggle);
+                    }
+                })
+            } catch (error) {
+                console.log('公共初始化特殊框报错:', error);
+            }
+
+
+        })
+        $(function () {
+            //交易本身的代码
+            $('#toppaynum_tygm').on('blur', function (event) {
+                if ($(this).data('validate')) {
+                    var flag = false;
+                    if (flag) {} else {
+                        $(this).validTip({
+                            msg: "交易校验未通过"
+                        });
+                        $(this).focus();
+                    }
+                }
+
+            });
+
+        })
+    </script>
+</body>
+
+</html>

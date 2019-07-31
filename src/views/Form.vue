@@ -78,10 +78,29 @@
                 </div>
             </div>
         </fieldset>
+        <fieldset class="fieldset">
+            <legend> 自定义单选框:my-checkbox</legend>
+            <div class="fieldContent">
+                <h4>单选框</h4>
+                <!-- v-model="foo" value="some value" -->
+                <!-- <my-checkbox ></my-checkbox> -->
+            </div>
+
+        </fieldset>
+        <fieldset class="fieldset">
+            <legend> 货币输入的自定义控件:currency-input</legend>
+            <div class="fieldContent">
+                <p>{{price}}</p>
+                <currency-input v-model="price"></currency-input>
+            </div>
+
+        </fieldset>
     </div>
 </template>
 
 <script>
+    import currencyInput from '@/components/Form/currencyInput'
+
     //复选框
     let arr = [];
     for (var i = 0; i < 10; i++) {
@@ -102,8 +121,12 @@
     // console.log(arr);
     export default {
         name: 'Form',
+        components:{
+            'currency-input':currencyInput
+        },
         data() {
             return {
+                price:null,//currency-input 用到
                 //输入框
                 input1: '',
                 //动态加载复选框, 复选框的全选与反选
@@ -114,17 +137,17 @@
                 singleSelected: '',
                 manySelected: [],
                 options: [{
-                        text: 'One',
-                        value: 'A'
-                    },
-                    {
-                        text: 'Two',
-                        value: 'B'
-                    },
-                    {
-                        text: 'Three',
-                        value: 'C'
-                    }
+                    text: 'One',
+                    value: 'A'
+                },
+                {
+                    text: 'Two',
+                    value: 'B'
+                },
+                {
+                    text: 'Three',
+                    value: 'C'
+                }
                 ],
             }
         },
@@ -179,4 +202,5 @@
             }
         }
     }
+
 </script>
